@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Declaração de Amor</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: url('https://cdn.discordapp.com/attachments/790762812321824799/1285783956419252287/IMG_20240914_215610_882.jpg?ex=66eb871f&is=66ea359f&hm=169257b924a8456a72ca97820b260496f27abcff01dc785ecf3b764bf233b072&') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+        }
+
+        /* Filtro blur apenas para a imagem de fundo */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            filter: blur(5px);
+            z-index: -1;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+            z-index: 1;
+        }
+
+        .hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 2;
+            overflow: hidden;
+        }
+
+        .heart {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background-color: red;
+            transform: rotate(45deg);
+            animation: float 5s infinite ease-in-out;
+            opacity: 0.8;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: '';
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background-color: red;
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            top: -25px;
+            left: 0;
+        }
+
+        .heart::after {
+            left: 25px;
+            top: 0;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(45deg);
+            }
+            100% {
+                transform: translateY(-100vh) rotate(45deg);
+            }
+        }
+
+        .heart:nth-child(odd) {
+            animation-duration: 4s;
+            animation-delay: 2s;
+        }
+
+        .heart:nth-child(even) {
+            animation-duration: 6s;
+            animation-delay: 1s;
+        }
+
+        .declaration {
+            position: absolute;
+            z-index: 3;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: rgb(255, 255, 255);
+            text-align: center;
+        }
+
+        .declaration h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        .declaration p {
+            font-size: 0.9em;
+            margin: 10px 0;
+        }
+
+        audio {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            z-index: 4;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="overlay"></div>
+
+    <div class="hearts">
+        <div class="heart" style="left: 10%;"></div>
+        <div class="heart" style="left: 15%;"></div>
+        <div class="heart" style="left: 20%;"></div>
+        <div class="heart" style="left: 25%;"></div>
+        <div class="heart" style="left: 30%;"></div>
+        <div class="heart" style="left: 35%;"></div>
+        <div class="heart" style="left: 40%;"></div>
+        <div class="heart" style="left: 45%;"></div>
+        <div class="heart" style="left: 50%;"></div>
+        <div class="heart" style="left: 55%;"></div>
+        <div class="heart" style="left: 60%;"></div>
+        <div class="heart" style="left: 65%;"></div>
+        <div class="heart" style="left: 70%;"></div>
+        <div class="heart" style="left: 75%;"></div>
+        <div class="heart" style="left: 80%;"></div>
+        <div class="heart" style="left: 85%;"></div>
+        <div class="heart" style="left: 90%;"></div>
+    </div>
+
+    <div class="declaration">
+        <h1>Eu te amo muitooo meu amor!</h1>
+        <p>Cinco meses de namoro à distância podem parecer um desafio, mas cada dia longe só reforça o quanto nosso amor é forte. A saudade vira combustível para continuar e as conversas, mesmo que por tela, trazem conforto e carinho. A distância nos ensinou a valorizar cada momento juntos, nos tornando mais pacientes e nos fez acreditar que quando há amor verdadeiro, nenhum quilômetro é capaz de separar dois corações que batem juntos e acelerados. Cada dia de espera é uma prova de que o que temos vale a pena e que em breve estaremos 🩷lado a lado🩷</p>
+    </div>
+
+    <!-- Adicionando música -->
+    <audio autoplay loop>
+        <source src="IWBY REF.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+</body>
+</html>
